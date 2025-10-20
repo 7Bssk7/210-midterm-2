@@ -273,7 +273,7 @@ int main() {
 
         }
         if(chance(10)){
-            
+
         }
 
 
@@ -289,4 +289,17 @@ int main() {
 
 string randomName(const vector<string>& n){
     return n.at(rand() % n.size());
+}
+
+bool chance(int p){
+    int random = rand()% 100;
+    bool check;
+    if(random <= p){
+        check = 1;
+    }
+    else{
+        check = 0;
+    }
+
+    return check;
 }
