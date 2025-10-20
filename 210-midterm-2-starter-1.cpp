@@ -95,7 +95,7 @@ public:
         for(int i = 1; i < pos; i++){
             if(!temp){
                 cout << "Position does not exist." << endl;
-                return nullptr;
+                return "f";
             }
             else{
                 temp = temp->next;
@@ -103,7 +103,7 @@ public:
         }
 
         if(!temp){
-            cout << "Position does not exist." << endl;
+            cout << "f" << endl;
             return nullptr;
         }
 
@@ -318,11 +318,16 @@ int main() {
             cout << last << " (at the rear) left the line" << endl;
 
         }
-        if(chance(60) && !list.empty()){
+        if(chance(20) && !list.empty()){
             int r = rand() % MIN_LS;
             string find = list.find_pos(r);
-            list.delete_pos(r);
-            cout << find << " left the line" << endl;
+            if(find == "f"){
+                cout << "Line is empty" << endl;
+            }
+            else{
+                list.delete_pos(r);
+                cout << find << " left the line" << endl;
+            }
         }
         if(chance(10)){
             string vip = randomName(names);
