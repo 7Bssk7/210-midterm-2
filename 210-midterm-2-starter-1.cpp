@@ -213,6 +213,7 @@ public:
 string randomName(const vector<string>&);
 
 
+
 int main() {
     srand(time(0));
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
@@ -246,7 +247,8 @@ int main() {
     list.print();
 
     for(int i = 1; i < TIME; ++i){
-        
+        cout << "Time step #" << i << ":" << endl;
+
     }
 
 
