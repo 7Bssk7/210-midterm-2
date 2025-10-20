@@ -223,6 +223,12 @@ public:
             return head->data;
         }
     }
+
+    string get_rear() const{
+        if(tail){
+            return tail->data;
+        }
+    }
 };
 
 string randomName(const vector<string>&);
@@ -279,7 +285,9 @@ int main() {
 
         }
         if(chance(20) && !list.empty()){
-            string last ;
+            string last = list.get_rear();
+            list.pop_back();
+            cout << last << " (at the rear) left the line" << endl;
 
         }
         if(chance(10) && !list.empty()){
