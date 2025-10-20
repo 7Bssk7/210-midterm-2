@@ -218,6 +218,12 @@ public:
         return check;
 
     }
+
+    string get_front() const{
+        if(head){
+            return head->data;
+        }
+    }
 };
 
 string randomName(const vector<string>&);
@@ -266,10 +272,10 @@ int main() {
         if(chance(60)){
 
         }
-        if(chance(20)){
+        if(chance(20) && !list.empty()){
 
         }
-        if(chance(10)){
+        if(chance(10) && !list.empty()){
 
         }
         if(chance(10)){
@@ -278,9 +284,6 @@ int main() {
 
 
     }
-
-
-    
 
     
     return 0;
