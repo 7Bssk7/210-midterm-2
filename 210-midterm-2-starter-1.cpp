@@ -95,7 +95,7 @@ public:
         for(int i = 1; i < pos; i++){
             if(!temp){
                 cout << "Position does not exist." << endl;
-                return ;
+                return "";
             }
             else{
                 temp = temp->next;
@@ -104,7 +104,7 @@ public:
 
         if(!temp){
             cout << "Position does not exist." << endl;
-            return nullptr;
+            return "";
         }
 
         return temp->data;
@@ -324,7 +324,7 @@ int main() {
 
         }
         if(chance(50) && !list.empty()){
-            int r = rand() % count;
+            int r = rand() % count + 1;
             string find = list.find_pos(r);
             list.delete_pos(r);
             cout << find << " left the line" << endl;
