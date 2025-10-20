@@ -323,12 +323,14 @@ int main() {
             count -=1;
 
         }
-        if(chance(50) && !list.empty()){
+        if(chance(10) && !list.empty()){
             int r = rand() % count + 1;
             string find = list.find_pos(r);
-            list.delete_pos(r);
-            cout << find << " left the line" << endl;
-            count -=1;
+            if(find != ""){
+                list.delete_pos(r);
+                cout << find << " left the line" << endl;
+                count -=1;
+            }
         }
         if(chance(10)){
             string vip = randomName(names);
