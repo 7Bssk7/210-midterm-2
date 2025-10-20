@@ -304,14 +304,14 @@ int main() {
         if(chance(40) && !list.empty()){
             string s = list.get_front();
             list.pop_front();
-            cout << s << " is served" << endl;
+            cout << "    " << s << " is served" << endl;
             count -= 1;
 
         }
         if(chance(60)){
             string n = randomName(names);
             list.push_back(n);
-            cout << n << " Joins the line" << endl;
+            cout << "    " << n << " Joins the line" << endl;
             count += 1;
 
 
@@ -319,7 +319,7 @@ int main() {
         if(chance(20) && !list.empty()){
             string last = list.get_rear();
             list.pop_back();
-            cout << last << " (at the rear) left the line" << endl;
+            cout  << "    " << last << " (at the rear) left the line" << endl;
             count -=1;
 
         }
@@ -328,7 +328,7 @@ int main() {
             string find = list.find_pos(r);
             if(find != ""){
                 list.delete_pos(r);
-                cout << find << " left the line" << endl;
+                cout << "    " << find << " left the line" << endl;
                 count -=1;
             }
         }
@@ -336,12 +336,12 @@ int main() {
             string vip = randomName(names);
             vip += " - VIP";
             list.push_front(vip);
-            cout << vip << " (VIP) joins the front of the line" << endl;
+            cout << "    " << vip << " (VIP) joins the front of the line" << endl;
             count +=1;
 
         }
 
-        cout << "Resulting line: "<< endl;
+        cout << "    Resulting line: "<< endl;
         list.print();
 
 
@@ -353,7 +353,7 @@ int main() {
 
 
 string randomName(const vector<string>& n){
-    return n.at(rand() % n.size());
+    return n.at(rand() % n.size() + 1);
 }
 
 bool chance(int p){
