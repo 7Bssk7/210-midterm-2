@@ -84,7 +84,7 @@ public:
     }
     string find_pos(int pos) const{
         if(!head){
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
         } 
         if( pos == 1){
             return head->data;
@@ -113,7 +113,7 @@ public:
 
     void delete_pos(int pos) {
         if (!head) {
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
             return;
         }
     
@@ -173,7 +173,7 @@ public:
     void pop_front() {
 
         if (!head) {
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
             return;
         }
 
@@ -190,7 +190,7 @@ public:
 
     void pop_back() {
         if (!tail) {
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
             return;
         }
         Node * temp = tail;
@@ -214,7 +214,7 @@ public:
     void print() {
         Node* current = head;
         if (!current) {
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
             return;
         }
         while (current) {
@@ -227,7 +227,7 @@ public:
     void print_reverse() {
         Node* current = tail;
         if (!current) { 
-            cout << "List is empty." << endl;
+            cout << "Line is empty." << endl;
             return;
         }
         while (current) {
