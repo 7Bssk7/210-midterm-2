@@ -209,6 +209,8 @@ public:
     }
 };
 
+string randomName(const vector<string>&);
+
 int main() {
     srand(time(0));
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
@@ -229,8 +231,23 @@ int main() {
 
     input_File.close();
 
+    cout << "Store open:" << endl;
+
+    for(int i = 0; i < MIN_LS; ++i){
+        string n = RandomName(names);
+        list.push_back(n); 
+        cout << n << "Joins the line" << endl;
+    }
+
+
+
     
 
     
     return 0;
+}
+
+string RandomName(const vector<string>& n){
+
+
 }
