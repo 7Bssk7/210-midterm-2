@@ -208,6 +208,16 @@ public:
         }
         cout << endl;
     }
+    bool empty() {
+
+        bool check = 1;
+        if(head == nullptr){
+            check = 0;
+        } 
+
+        return check;
+
+    }
 };
 
 string randomName(const vector<string>&);
@@ -250,7 +260,19 @@ int main() {
     for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
 
-        if(chance(40)){
+        if(chance(40) && !list.empty()){
+
+        }
+        if(chance(60)){
+
+        }
+        if(chance(20)){
+
+        }
+        if(chance(10)){
+
+        }
+        if(chance(10)){
             
         }
 
