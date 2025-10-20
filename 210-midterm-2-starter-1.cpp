@@ -113,7 +113,7 @@ public:
 
     void delete_pos(int pos) {
         if (!head) {
-            cout << "Line is empty." << endl;
+            cout << "    Line is empty." << endl;
             return;
         }
     
@@ -173,7 +173,7 @@ public:
     void pop_front() {
 
         if (!head) {
-            cout << "Line is empty." << endl;
+            cout << "   Line is empty." << endl;
             return;
         }
 
@@ -190,7 +190,7 @@ public:
 
     void pop_back() {
         if (!tail) {
-            cout << "Line is empty." << endl;
+            cout << "   Line is empty." << endl;
             return;
         }
         Node * temp = tail;
@@ -214,7 +214,7 @@ public:
     void print() {
         Node* current = head;
         if (!current) {
-            cout << "Line is empty." << endl;
+            cout << "    Line is empty." << endl;
             return;
         }
         while (current) {
@@ -227,7 +227,7 @@ public:
     void print_reverse() {
         Node* current = tail;
         if (!current) { 
-            cout << "Line is empty." << endl;
+            cout << "    Line is empty." << endl;
             return;
         }
         while (current) {
@@ -353,7 +353,7 @@ int main() {
 
 
 string randomName(const vector<string>& n){
-    return n.at(rand() % n.size() + 1);
+    return n.at(rand() % n.size());
 }
 
 bool chance(int p){
