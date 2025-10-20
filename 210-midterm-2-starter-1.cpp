@@ -82,10 +82,32 @@ public:
 
         delete temp;
     }
-    string find_pos() const{
+    string find_pos(int pos) const{
         if(!head){
             cout << "List is empty." << endl;
         } 
+        if( pos == 1){
+            return head->data;
+        }
+        
+        Node* temp = head; 
+
+        for(int i = 1; i < pos; i++){
+            if(!temp){
+                cout << "Position does not exist." << endl;
+                return nullptr;
+            }
+            else{
+                temp = temp->next;
+            }
+        }
+
+        if(!temp){
+            cout << "Position does not exist." << endl;
+            return nullptr;
+        }
+
+        return temp->data;
 
     }
 
