@@ -209,10 +209,9 @@ public:
         cout << endl;
     }
     bool empty() {
-
-        bool check = 1;
+        bool check = 0;
         if(head == nullptr){
-            check = 0;
+            check = 1;
         } 
 
         return check;
@@ -266,7 +265,10 @@ int main() {
     for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
 
-        if(chance(40) && !list.empty()){
+        if(chance(80) && !list.empty()){
+            string s = list.get_front();
+            list.pop_front();
+            cout << s << " is served" << endl;
 
         }
         if(chance(60)){
@@ -281,6 +283,8 @@ int main() {
         if(chance(10)){
 
         }
+
+        list.print();
 
 
     }
