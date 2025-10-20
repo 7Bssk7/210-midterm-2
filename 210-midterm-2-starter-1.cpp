@@ -95,7 +95,7 @@ public:
         for(int i = 1; i < pos; i++){
             if(!temp){
                 cout << "Position does not exist." << endl;
-                return "f";
+                return ;
             }
             else{
                 temp = temp->next;
@@ -103,7 +103,7 @@ public:
         }
 
         if(!temp){
-            cout << "f" << endl;
+            cout << "Position does not exist." << endl;
             return nullptr;
         }
 
