@@ -274,17 +274,21 @@ int main() {
         if(chance(60)){
             string n = randomName(names);
             list.push_back(n);
-            cout << n << "Joins the line" << endl;
+            cout << n << " Joins the line" << endl;
 
 
         }
         if(chance(20) && !list.empty()){
+            string last ;
 
         }
         if(chance(10) && !list.empty()){
 
         }
         if(chance(10)){
+            string vip = randomName(names);
+            list.push_front(vip);
+            cout << vip << " (VIP) joins the front of the line" << endl;
 
         }
 
