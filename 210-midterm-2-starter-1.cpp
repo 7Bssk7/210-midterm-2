@@ -189,7 +189,7 @@ public:
             return;
         }
         while (current) {
-            cout << current->data << " ";
+            cout << "        " << current->data << endl;
             current = current->next;
         }
         cout << endl;
@@ -236,10 +236,10 @@ int main() {
     for(int i = 0; i < MIN_LS; ++i){
         string n = randomName(names);
         list.push_back(n); 
-        cout << n << "Joins the line" << endl;
+        cout << "    " << n << " Joins the line" << endl;
     }
 
-    cout << "Resulting line: "<< endl;
+    cout << "    Resulting line: "<< endl;
 
     list.print();
 
