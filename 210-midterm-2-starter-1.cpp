@@ -82,6 +82,7 @@ public:
 
         delete temp;
     }
+    //This method finds the name of the customer at the give position 
     string find_pos(int pos) const{
         if(!head){
             cout << "Line is empty." << endl;
@@ -236,6 +237,7 @@ public:
         }
         cout << endl;
     }
+    //This method checks if the line is empty or not
     bool empty() {
         bool check = 0;
         if(head == nullptr){
@@ -246,12 +248,14 @@ public:
 
     }
 
+    //This method returns name of the customer in the front of the line 
     string get_front() const{
         if(head){
             return head->data;
         }
     }
 
+    //This method returns the name of the customer at the back of the line
     string get_rear() const{
         if(tail){
             return tail->data;
@@ -266,7 +270,7 @@ bool chance(int p);
 
 int main() {
     srand(time(0));
-    cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+
     DoublyLinkedList list;
     vector<string> names;
     string name;
@@ -349,6 +353,7 @@ int main() {
 
         }
 
+        //This code outputs the current line
         cout << "    Resulting line: "<< endl;
         list.print();
 
