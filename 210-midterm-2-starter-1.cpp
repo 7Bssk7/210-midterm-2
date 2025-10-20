@@ -82,6 +82,12 @@ public:
 
         delete temp;
     }
+    string find_pos() const{
+        if(!head){
+            cout << "List is empty." << endl;
+        } 
+
+    }
 
     void delete_pos(int pos) {
         if (!head) {
@@ -291,6 +297,7 @@ int main() {
 
         }
         if(chance(10) && !list.empty()){
+            int r = rand() % MIN_LS;
 
         }
         if(chance(10)){
