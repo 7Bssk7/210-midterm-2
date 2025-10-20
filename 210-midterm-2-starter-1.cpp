@@ -319,7 +319,7 @@ int main() {
 
         }
         if(chance(20) && !list.empty()){
-            int r = rand() % MIN_LS;
+            int r = rand() % MIN_LS + 1;
             string find = list.find_pos(r);
             if(find == "f"){
                 cout << "Line is empty" << endl;
