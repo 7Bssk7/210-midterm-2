@@ -270,6 +270,7 @@ int main() {
     DoublyLinkedList list;
     vector<string> names;
     string name;
+    int count;
     fstream input_File("names.txt");
 
     if(!input_File){
@@ -291,6 +292,7 @@ int main() {
         list.push_back(n); 
         cout << "    " << n << " Joins the line" << endl;
     }
+    count = 5;
 
     cout << "    Resulting line: "<< endl;
 
@@ -303,12 +305,14 @@ int main() {
             string s = list.get_front();
             list.pop_front();
             cout << s << " is served" << endl;
+            count -= 1;
 
         }
         if(chance(60)){
             string n = randomName(names);
             list.push_back(n);
             cout << n << " Joins the line" << endl;
+            count += 1;
 
 
         }
@@ -316,24 +320,22 @@ int main() {
             string last = list.get_rear();
             list.pop_back();
             cout << last << " (at the rear) left the line" << endl;
+            count -=1;
 
         }
-        if(chance(10) && !list.empty()){
-            int r = rand() % MIN_LS + 1;
+        if(chance(50) && !list.empty()){
+            int r = rand() % count;
             string find = list.find_pos(r);
-            if(find == "f"){
-                cout << "Line is empty" << endl;
-            }
-            else{
-                list.delete_pos(r);
-                cout << find << " left the line" << endl;
-            }
+            list.delete_pos(r);
+            cout << find << " left the line" << endl;
+            count -=1;
         }
         if(chance(10)){
             string vip = randomName(names);
             vip += " - VIP";
             list.push_front(vip);
             cout << vip << " (VIP) joins the front of the line" << endl;
+            count +=1;
 
         }
 
