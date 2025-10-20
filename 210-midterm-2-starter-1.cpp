@@ -211,6 +211,13 @@ public:
 int main() {
     srand(time(0));
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+    fstream input_File("names.txt");
+
+    if(!input_File){
+        cout << "Error, was not able to open the file!" << endl;
+
+        return 1;
+    }
 
     
     return 0;
