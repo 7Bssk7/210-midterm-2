@@ -270,7 +270,7 @@ int main() {
     DoublyLinkedList list;
     vector<string> names;
     string name;
-    int count;
+    int count; // this integer keeps track of number of costumers in the line
     fstream input_File("names.txt");
 
     if(!input_File){
@@ -279,6 +279,7 @@ int main() {
         return 1;
     }
 
+    // this loop reads names into vector names
     while(input_File>>name){
         names.push_back(name);
     }
@@ -287,20 +288,23 @@ int main() {
 
     cout << "Store open:" << endl;
 
+    //This loop adds 5 costumers into the line
     for(int i = 0; i < MIN_LS; ++i){
         string n = randomName(names);
         list.push_back(n); 
         cout << "    " << n << " Joins the line" << endl;
     }
     count = 5;
-
+    // this code prints the current line
     cout << "    Resulting line: "<< endl;
 
     list.print();
 
+    //This loop simulates 20 minutes time interval
     for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
 
+        //This condition statement checks if customer in the front of the line is served 
         if(chance(40) && !list.empty()){
             string s = list.get_front();
             list.pop_front();
@@ -308,6 +312,7 @@ int main() {
             count -= 1;
 
         }
+        //This condition statement checks if anybody joined the line
         if(chance(60)){
             string n = randomName(names);
             list.push_back(n);
@@ -316,6 +321,7 @@ int main() {
 
 
         }
+        //This condition statement checks if a customer at the end of the line left the line 
         if(chance(20) && !list.empty()){
             string last = list.get_rear();
             list.pop_back();
@@ -323,6 +329,7 @@ int main() {
             count -=1;
 
         }
+        //This condition statement checks if any customer from the line left 
         if(chance(10) && !list.empty()){
             int r = rand() % count + 1;
             string find = list.find_pos(r);
@@ -332,6 +339,7 @@ int main() {
                 count -=1;
             }
         }
+        //This condition statement checks if any VIP customer joined the line, if so they are moved to the front of the list 
         if(chance(10)){
             string vip = randomName(names);
             vip += " - VIP";
@@ -351,11 +359,12 @@ int main() {
     return 0;
 }
 
-
+//This function returns a random name from the vector names 
 string randomName(const vector<string>& n){
     return n.at(rand() % n.size());
 }
 
+// This function checks if event occurs based on the given percent(p)
 bool chance(int p){
     int random = rand()% 100 + 1;
     bool check;
