@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -211,6 +212,9 @@ public:
 int main() {
     srand(time(0));
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+    DoublyLinkedList list;
+    vector<string> names;
+    string name;
     fstream input_File("names.txt");
 
     if(!input_File){
@@ -218,6 +222,14 @@ int main() {
 
         return 1;
     }
+
+    while(input_File>>name){
+        names.push_back(name);
+    }
+
+    input_File.close();
+
+    
 
     
     return 0;
