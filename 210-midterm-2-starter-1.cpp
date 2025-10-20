@@ -1,4 +1,9 @@
+// COMSC-210 | Midterm 2 | Arkhip Finski
+// IDE used: Visual Studio
 #include <iostream>
+#include <fstream>
+#include <ctime>
+#include <string>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -204,6 +209,7 @@ public:
 };
 
 int main() {
+    srand(time(0));
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
 
     
