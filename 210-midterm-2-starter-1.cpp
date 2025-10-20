@@ -365,11 +365,15 @@ int main() {
 }
 
 //This function returns a random name from the vector names 
+//arguments: reference to the vector of names (n)
+//returns: randomly selected name 
 string randomName(const vector<string>& n){
     return n.at(rand() % n.size());
 }
 
 // This function checks if event occurs based on the given percent(p)
+//argument: int p (percent)
+//return: true if event occurs 
 bool chance(int p){
     int random = rand()% 100 + 1;
     bool check;
