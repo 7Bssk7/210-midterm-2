@@ -211,6 +211,7 @@ public:
 };
 
 string randomName(const vector<string>&);
+bool chance(int p);
 
 
 
@@ -248,6 +249,11 @@ int main() {
 
     for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
+
+        if(chance(40)){
+            
+        }
+
 
     }
 
