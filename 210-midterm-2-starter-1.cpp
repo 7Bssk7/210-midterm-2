@@ -318,7 +318,7 @@ int main() {
             cout << last << " (at the rear) left the line" << endl;
 
         }
-        if(chance(20) && !list.empty()){
+        if(chance(10) && !list.empty()){
             int r = rand() % MIN_LS + 1;
             string find = list.find_pos(r);
             if(find == "f"){
