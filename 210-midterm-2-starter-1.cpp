@@ -246,7 +246,7 @@ int main() {
 
     list.print();
 
-    for(int i = 1; i < TIME; ++i){
+    for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
 
     }
