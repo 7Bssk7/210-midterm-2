@@ -357,7 +357,7 @@ string randomName(const vector<string>& n){
 }
 
 bool chance(int p){
-    int random = rand()% 100;
+    int random = rand()% 100 + 1;
     bool check;
     if(random <= p){
         check = 1;
