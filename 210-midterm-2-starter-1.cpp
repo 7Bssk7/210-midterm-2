@@ -318,9 +318,11 @@ int main() {
             cout << last << " (at the rear) left the line" << endl;
 
         }
-        if(chance(10) && !list.empty()){
+        if(chance(60) && !list.empty()){
             int r = rand() % MIN_LS;
-
+            string find = list.find_pos(r);
+            list.delete_pos(r);
+            cout << find << " left the line" << endl;
         }
         if(chance(10)){
             string vip = randomName(names);
