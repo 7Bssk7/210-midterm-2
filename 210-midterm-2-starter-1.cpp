@@ -295,6 +295,7 @@ int main() {
         }
         if(chance(10)){
             string vip = randomName(names);
+            vip += " - VIP";
             list.push_front(vip);
             cout << vip << " (VIP) joins the front of the line" << endl;
 
