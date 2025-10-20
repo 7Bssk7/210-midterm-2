@@ -265,13 +265,17 @@ int main() {
     for(int i = 2; i <= TIME; ++i){
         cout << "Time step #" << i << ":" << endl;
 
-        if(chance(80) && !list.empty()){
+        if(chance(40) && !list.empty()){
             string s = list.get_front();
             list.pop_front();
             cout << s << " is served" << endl;
 
         }
         if(chance(60)){
+            string n = randomName(names);
+            list.push_back(n);
+            cout << n << "Joins the line" << endl;
+
 
         }
         if(chance(20) && !list.empty()){
@@ -284,6 +288,7 @@ int main() {
 
         }
 
+        cout << "Resulting line: "<< endl;
         list.print();
 
 
